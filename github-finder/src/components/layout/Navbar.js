@@ -1,8 +1,7 @@
 import React from 'react';
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-
-
+import {Link} from "react-router-dom";
 
 
 const Navbar = ({icon, title})  => {
@@ -11,6 +10,12 @@ const Navbar = ({icon, title})  => {
                 <h1>
                     {icon} {title}
                 </h1>
+                <ul>
+                    <li>
+                        <Link to='/'>Home</Link>
+                    </li>
+                    <li><Link to='/about'>About</Link></li>
+                </ul>
             </nav>
         )
 }

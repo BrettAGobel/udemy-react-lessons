@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import App from "../../App";
 
 export class Search extends Component {
 
@@ -12,8 +13,14 @@ export class Search extends Component {
 
     onSubmit = (e) => {
         e.preventDefault()
-        this.props.searchUsers(this.state.text)
+        if  (this.state.text === '') {
+            this.props.setAlert('please enter something', 'dark')
+        } else this.props.searchUsers(this.state.text)
+
         this.setState({text: ''})
+        // this.props.setAlert(null, null)
+
+
     }
 
     render() {
